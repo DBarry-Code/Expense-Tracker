@@ -3,17 +3,21 @@ import { GlobalContext } from "../contexts/GlobalState";
 import { v4 as uuidv4 } from "uuid";
 
 const AddTransaction = () => {
+    // Global Actions
     const { addIncome, addExpense } = useContext(GlobalContext);
 
-    //Income Part: States and Handler
-
+    //Income Part: local states and handler
     const [income, setIncome] = useState({ incomeText: "", incomeAmount: 0 });
+
+    //Destructure to avoit dots!
     const { incomeText, incomeAmount } = income;
 
+    //onChange event handler for input income to get both vules at the same time!
     const onChangeIncome = (event) => {
         setIncome({ ...income, [event.target.name]: event.target.value });
     };
 
+    //onSubmit event handler: Creat a new Object / addIncome get a
     const onSubmitIncome = (event) => {
         event.preventDefault();
 
@@ -26,7 +30,7 @@ const AddTransaction = () => {
         setIncome({ incomeText: "", incomeAmount: 0 });
     };
 
-    //Expense Part: States and Handler
+    //Expense Part: local states and handler
 
     const [expense, setExpense] = useState({
         expenseText: "",
@@ -52,6 +56,7 @@ const AddTransaction = () => {
     };
 
     return (
+        // Income Part
         <div className='form-wrapper'>
             <form onSubmit={onSubmitIncome}>
                 <div className='input-group income'>

@@ -5,16 +5,14 @@ import ExpenseTransaction from "./ExpenseTransaction";
 const ExpenseList = () => {
     const { expenseTransactions } = useContext(GlobalContext);
 
-    console.log({ expenseTransactions });
-
     return (
         <div className='transactions transactions-expense'>
             <h2>Transaction History</h2>
             <ul className='transaction-list'>
-                {expenseTransactions.map((expenseTransactions) => (
+                {expenseTransactions.map((expenseTransaction) => (
                     <ExpenseTransaction
-                        key={expenseTransactions.id}
-                        expenseTransactions={expenseTransactions}
+                        key={expenseTransaction.id}
+                        expenseTransaction={expenseTransaction}
                     />
                 ))}
             </ul>
