@@ -1,3 +1,5 @@
+// All actions and state changes
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
     switch (action.type) {

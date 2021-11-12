@@ -20,14 +20,15 @@ const AddTransaction = () => {
     //onSubmit event handler: Creat a new Object / addIncome get a
     const onSubmitIncome = (event) => {
         event.preventDefault();
-
-        const newIncomeTransaction = {
-            id: uuidv4(),
-            incomeText,
-            incomeAmount: incomeAmount * 1,
-        };
-        addIncome(newIncomeTransaction);
-        setIncome({ incomeText: "", incomeAmount: 0 });
+        if (incomeText !== "") {
+            const newIncomeTransaction = {
+                id: uuidv4(),
+                incomeText,
+                incomeAmount: incomeAmount * 1,
+            };
+            addIncome(newIncomeTransaction);
+            setIncome({ incomeText: "", incomeAmount: 0 });
+        }
     };
 
     //Expense Part: local states and handler
@@ -45,14 +46,16 @@ const AddTransaction = () => {
     const onSubmitExpense = (event) => {
         event.preventDefault();
 
-        const newExpenseTransaction = {
-            id: uuidv4(),
-            expenseText,
-            expenseAmount: expenseAmount * 1,
-        };
+        if (expenseText !== "") {
+            const newExpenseTransaction = {
+                id: uuidv4(),
+                expenseText,
+                expenseAmount: expenseAmount * 1,
+            };
 
-        addExpense(newExpenseTransaction);
-        setExpense({ expenseText: "", expenseAmount: 0 });
+            addExpense(newExpenseTransaction);
+            setExpense({ expenseText: "", expenseAmount: 0 });
+        }
     };
 
     return (
