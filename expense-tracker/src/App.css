@@ -179,11 +179,11 @@ html {
 }
 
 .income input[type="submit"] {
-    background-color: #77c987;
+    background-color: #23582d;
 }
 
 .expense input[type="submit"] {
-    background-color: #ff716e;
+    background-color: #a30300;
 }
 
 input[type="number"]::-webkit-inner-spin-button {
@@ -252,11 +252,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .transactions-income .transaction {
-    background-color: #5a9b67;
+    background-color: #23582d;
 }
 
 .transactions-expense .transaction {
-    background-color: #cf5856;
+    background-color: #a30300;
 }
 
 .transaction-text {

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { GlobalContext } from "../contexts/GlobalState";
+import { GlobalContext } from "../../contexts/GlobalState";
 import { v4 as uuidv4 } from "uuid";
 
 const AddTransaction = () => {
@@ -69,6 +69,8 @@ const AddTransaction = () => {
                         value={incomeText}
                         placeholder='Add Income...'
                         autoComplete='off'
+                        aria-label='Income Text'
+                        tabIndex='0'
                         onChange={onChangeIncome}
                     />
                     <input
@@ -77,9 +79,10 @@ const AddTransaction = () => {
                         value={incomeAmount}
                         placeholder='Amount'
                         autoComplete='off'
+                        aria-label='Income Amount'
                         onChange={onChangeIncome}
                     />
-                    <input type='submit' value='Submit' />
+                    <input type='submit' value='Submit' aria-label='Submit' />
                 </div>
             </form>
             {/* Expense Part */}
@@ -91,6 +94,7 @@ const AddTransaction = () => {
                         value={expenseText}
                         placeholder='Add Expense...'
                         autoComplete='off'
+                        aria-label='Expense Text'
                         onChange={onChangeExpense}
                     />
                     <input
@@ -99,9 +103,10 @@ const AddTransaction = () => {
                         value={expenseAmount}
                         placeholder='Amount'
                         autoComplete='off'
+                        aria-label='Expense Amount'
                         onChange={onChangeExpense}
                     />
-                    <input type='submit' value='Submit' />
+                    <input type='submit' value='Submit' aria-label='Submit' />
                 </div>
             </form>
         </div>
