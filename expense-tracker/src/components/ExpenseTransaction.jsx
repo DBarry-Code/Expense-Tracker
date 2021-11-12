@@ -3,15 +3,19 @@ import { GlobalContext } from "../contexts/GlobalState";
 
 const ExpenseTransaction = ({ expenseTransaction }) => {
     const { deleteTransaction } = useContext(GlobalContext);
+
+    const amountCurrency = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(expenseTransaction.expenseAmount);
+
     return (
         <>
             <li className='transaction'>
                 <span className='transaction-text'>
                     {expenseTransaction.expenseText}
                 </span>
-                <span className='transaction-amount'>
-                    {expenseTransaction.expenseAmount}
-                </span>
+                <span className='transaction-amount'>{amountCurrency}</span>
                 <button
                     onClick={() => deleteTransaction(expenseTransaction.id)}
                     className='delete-btn'

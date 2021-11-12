@@ -18,22 +18,37 @@ const Balance = () => {
         .reduce((accumulator, item) => (accumulator += item), 0)
         .toFixed(2);
 
+    const incomeCurrency = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(totalIncome);
+
     const totalExpense = expenseAmounts
         .reduce((accumulator, item) => (accumulator += item), 0)
         .toFixed(2);
 
+    const expenseCurrency = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(totalExpense);
+
+    const balance = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+    }).format(totalIncome - totalExpense);
+
     return (
         <div className='balance'>
             <h2>Your Balance</h2>
-            <h3>0.00 €</h3>
+            <h3>{balance}</h3>
             <div className='income-expense'>
                 <div className='plus'>
                     <h3>Income</h3>
-                    <p>+ {totalIncome} €</p>
+                    <p>+ {incomeCurrency}</p>
                 </div>
                 <div className='minus'>
                     <h3>Expenses</h3>
-                    <p>- {totalExpense} €</p>
+                    <p>- {expenseCurrency}</p>
                 </div>
             </div>
         </div>
