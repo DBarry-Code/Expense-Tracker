@@ -7,7 +7,7 @@ const IncomeTable = ({ incomeTransaction }) => {
     return (
         <tr key={incomeTransaction.id} className='table-success'>
             <th scope='row'>{incomeTransaction.incomeText}</th>
-            <td>{amountCurrency}</td>
+            <td>+ {amountCurrency}</td>
         </tr>
     );
 };

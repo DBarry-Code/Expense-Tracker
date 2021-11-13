@@ -1,6 +1,13 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { GlobalContext } from "../../contexts/GlobalState";
+import {
+    totalincome,
+    totalexpense,
+    totalAmountIncome,
+    totalAmountExpense,
+    formatBalancetoCurrency,
+    balanceClassName,
+} from "../../helper/calculations";
 
 // Balance Component to Display the total of the Income and Expense
 const Balance = () => {
@@ -8,51 +15,19 @@ const Balance = () => {
     const { incomeTransactions, expenseTransactions } =
         useContext(GlobalContext);
 
-    // Map over the state to get a new array with the vaules inside
-    const incomeAmounts = incomeTransactions.map(
-        (incomeTransaction) => incomeTransaction.incomeAmount
-    );
-    const expenseAmounts = expenseTransactions.map(
-        (expenseTransaction) => expenseTransaction.expenseAmount
-    );
+    //Callbacks to get Sum Income and Expenst in Currency format
+    const incomeTotalCurrency = totalincome(incomeTransactions);
+    const expenseTotalCurency = totalexpense(expenseTransactions);
 
-    // Summary all Income values the new arrys with two digits
-    const totalIncome = incomeAmounts
-        .reduce((accumulator, item) => (accumulator += item), 0)
-        .toFixed(2);
+    //Callback to get Sum Icome and Expense to calculate Balance
+    const totalIncome = totalAmountIncome(incomeTransactions);
+    const totalExpense = totalAmountExpense(expenseTransactions);
 
-    // convert the Income Summary a curency format
-    const incomeCurrency = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
-    }).format(totalIncome);
+    //Calculate the blance and convert to currency format
+    const balance = formatBalancetoCurrency(totalIncome, totalExpense);
 
-    // Summary all Expanse values the new arrys with two digits
-    const totalExpense = expenseAmounts
-        .reduce((accumulator, item) => (accumulator += item), 0)
-        .toFixed(2);
-    // convert the Expanse Summary to a curency format
-    const expenseCurrency = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
-    }).format(totalExpense);
-
-    //calculate the blance and convert to currency format
-    const balance = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
-    }).format(totalIncome - totalExpense);
-
-    // Dynamic className to get diffrent color
-    const classes = [];
-
-    if (parseInt(balance) === 0) {
-        classes.push("balance");
-    } else if (parseInt(balance) > 0) {
-        classes.push("balance plus");
-    } else {
-        classes.push("balance minus");
-    }
+    // Calback to get Dynamic className "diffrent color"
+    const classes = balanceClassName(balance);
 
     return (
         <div className={classes}>
@@ -61,15 +36,12 @@ const Balance = () => {
             <div className='income-expense'>
                 <div className='plus'>
                     <h3>Income</h3>
-                    <p>+ {incomeCurrency}</p>
+                    <p>+ {incomeTotalCurrency}</p>
                 </div>
                 <div className='minus'>
                     <h3>Expenses</h3>
-                    <p>- {expenseCurrency}</p>
+                    <p>- {expenseTotalCurency}</p>
                 </div>
-            </div>
-            <div>
-                <Link to='/print'>CLick</Link>
             </div>
         </div>
     );
