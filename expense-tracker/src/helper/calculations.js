@@ -72,7 +72,7 @@ function balanceClassName(balance) {
 
 function balanceFromBg(balance) {
     if (parseInt(balance) === 0) {
-        return "";
+        return "table-light";
     }
     if (parseInt(balance) > 0) {
         return "table-success";

@@ -10,6 +10,7 @@ import {
     formatBalancetoCurrency,
     balanceFromBg,
 } from "../../helper/calculations";
+import { Link } from "react-router-dom";
 
 const ToPrint = () => {
     const { incomeTransactions, expenseTransactions } =
@@ -30,6 +31,15 @@ const ToPrint = () => {
 
     return (
         <div className='Print-page'>
+            <Link className='link-primary print-btn-back float-start' to='/'>
+                <i class='fas fa-backspace'> Back</i>
+            </Link>
+            <button
+                onClick={() => window.print()}
+                className='print-btn-print link-primary float-end'
+            >
+                <i class='fas fa-print'> Print</i>
+            </button>
             <table className='table table-hover'>
                 <thead>
                     <tr className='table-dark'>

@@ -96,6 +96,7 @@ html {
 
 .income-expense {
     display: flex;
+    /* flex-direction: column; */
     justify-content: space-evenly;
     margin-top: 10rem;
     font-family: "Muli", serif;
@@ -108,19 +109,13 @@ html {
     margin: 0 2rem;
 }
 
+.posetiv,
 .plus {
     color: #77c987;
 }
 
+.negativ,
 .minus {
-    color: #ff716e;
-}
-
-.posetiv {
-    color: #77c987;
-}
-
-.negativ {
     color: #ff716e;
 }
 
@@ -306,7 +301,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .Printer-btn {
-    transform: translateX(4rem);
     border: none;
     background-color: transparent;
     font-size: 2.5rem;
@@ -368,7 +362,7 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 1.6rem;
     width: 21cm;
     min-height: 29.7cm;
-    padding: 1.5cm 1cm;
+    padding: 0cm 1cm;
     margin: 1cm auto;
     border: 1px #d3d3d3 solid;
     border-radius: 5px;
@@ -376,9 +370,20 @@ input[type="number"]::-webkit-inner-spin-button {
     box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.7);
 }
 
+.print-btn-back,
+.print-btn-print {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    margin: 2rem 0rem;
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    outline: none;
+}
+
 @page {
     size: A4;
-    background-color: #fff !important;
+    background-color: white !important;
 }
 
 @media print {
@@ -387,10 +392,10 @@ input[type="number"]::-webkit-inner-spin-button {
         color: white;
     }
     .Print-page {
-        margin: 0;
+        margin: -57px 0;
         padding: 0;
         width: 100%;
-        min-height: 100%;
+        min-height: inherit;
         background: inherit;
         border: none;
         box-shadow: none;
@@ -398,5 +403,9 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     table {
         page-break-inside: avoid;
+    }
+    .print-btn-print,
+    .print-btn-back {
+        visibility: hidden;
     }
 }
