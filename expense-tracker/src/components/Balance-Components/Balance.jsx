@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../contexts/GlobalState";
 
 // Balance Component to Display the total of the Income and Expense
@@ -66,6 +67,9 @@ const Balance = () => {
                     <h3>Expenses</h3>
                     <p>- {expenseCurrency}</p>
                 </div>
+            </div>
+            <div>
+                <Link to='/print'>CLick</Link>
             </div>
         </div>
     );

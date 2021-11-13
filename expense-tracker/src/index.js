@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { GlobalContextProvider } from "./contexts/GlobalState";
 import App from "./App";
+import ToPrint from "./components/Print-Components/toPrint";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <GlobalContextProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' exact element={<App />} />
+                    <Route path='/print' exact element={<ToPrint />} />
+                </Routes>
+            </BrowserRouter>
+        </GlobalContextProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );

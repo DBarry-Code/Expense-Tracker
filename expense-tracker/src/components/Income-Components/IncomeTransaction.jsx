@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalState";
+import { amountToCurrency } from "../../helper/calculations";
 
 const IncomeTransactions = ({ incomeTransaction }) => {
     const { deleteTransaction } = useContext(GlobalContext);
 
-    const amountCurrency = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
-    }).format(incomeTransaction.incomeAmount);
+    const amountCurrency = amountToCurrency(incomeTransaction.incomeAmount);
 
     return (
         <li className='transaction'>
