@@ -2,8 +2,18 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalState";
 import { amountToCurrency } from "../../helper/calculations";
 
+/**
+ * This component is the logic component of the Expenslist
+ * and diplay the expense data
+ * Include the delet function
+ * @param { object } expenseTransaction
+ * @returns {JSX}
+ */
 const ExpenseTransaction = ({ expenseTransaction }) => {
+    // Global action to delete the position by id
     const { deleteTransaction } = useContext(GlobalContext);
+
+    // Callback to format the Amount to currency format!
     const amountCurrency = amountToCurrency(expenseTransaction.expenseAmount);
 
     return (

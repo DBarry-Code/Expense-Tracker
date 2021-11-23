@@ -98,7 +98,6 @@ function totalAmountExpense(transactions) {
  * @returns String = className
  */
 function balanceClassName(balance) {
-    console.log(balance);
     if (parseInt(balance) === 0) {
         return "balance";
     }

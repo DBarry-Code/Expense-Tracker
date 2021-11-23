@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// Header Component to display the App title
+
+/**
+ * Header Component to display the App title
+ * @returns  {JSX}
+ */
 const Header = () => {
     return (
         <>

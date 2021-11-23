@@ -12,7 +12,13 @@ import {
 } from "../../helper/calculations";
 import { Link } from "react-router-dom";
 
+/**
+ * This Component diplay the Print Page and shows the data
+ * @component IncomeTabel and ExpenseTabel
+ * @returns {JSX}
+ */
 const ToPrint = () => {
+    //import from global state
     const { incomeTransactions, expenseTransactions } =
         useContext(GlobalContext);
 
@@ -27,6 +33,7 @@ const ToPrint = () => {
     //Calculate the blance and convert to currency format
     const balance = formatBalancetoCurrency(totalIncome, totalExpense);
 
+    //Checker for the className to chnage the Background-color
     const rowBg = balanceFromBg(balance);
 
     return (

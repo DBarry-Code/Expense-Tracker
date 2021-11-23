@@ -2,7 +2,13 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalState";
 import ExpenseTransaction from "./ExpenseTransaction";
 
+/**
+ * This component is a representive component to display the Expenslist
+ * @component ExpenseTransaction
+ * @returns {JSX}
+ */
 const ExpenseList = () => {
+    // import form global state
     const { expenseTransactions } = useContext(GlobalContext);
 
     return (

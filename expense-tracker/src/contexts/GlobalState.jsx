@@ -13,7 +13,7 @@ export const GlobalContext = createContext(initialState);
 
 //Global Context Provider
 export const GlobalContextProvider = ({ children }) => {
-    //hook to use call the Reducer to change the Global state "initialState"
+    //hook to call the Reducer to change the Global state "initialState"
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
     //useEffect to the state in localStorage
@@ -28,7 +28,7 @@ export const GlobalContextProvider = ({ children }) => {
         );
     });
 
-    //Function with the action and the state how get to change
+    //Add Income function with the action and how to change state
     const addIncome = (incomeTransaction) => {
         dispatch({
             type: "ADD_INCOME",
@@ -36,6 +36,7 @@ export const GlobalContextProvider = ({ children }) => {
         });
     };
 
+    //Add Expense function with the action and how to change state
     const addExpense = (expenseTransaction) => {
         dispatch({
             type: "ADD_EXPENSE",
@@ -43,6 +44,7 @@ export const GlobalContextProvider = ({ children }) => {
         });
     };
 
+    //Delete transaction function with the action and how to change state
     const deleteTransaction = (id) => {
         dispatch({
             type: "DELETE_TRANSACTION",
