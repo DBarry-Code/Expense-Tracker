@@ -9,7 +9,11 @@ import {
     balanceClassName,
 } from "../../helper/calculations";
 
-// Balance Component to Display the total of the Income and Expense
+/**
+ *
+ * @component Balance Component to Display the total of the Income and Expense
+ * @returns {JSX Element}
+ */
 const Balance = () => {
     // Global states over useContext
     const { incomeTransactions, expenseTransactions } =
@@ -21,6 +25,7 @@ const Balance = () => {
 
     //Callback to get Sum Icome and Expense to calculate Balance
     const totalIncome = totalAmountIncome(incomeTransactions);
+
     const totalExpense = totalAmountExpense(expenseTransactions);
 
     //Calculate the blance and convert to currency format
