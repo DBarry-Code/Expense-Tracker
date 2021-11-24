@@ -2,7 +2,7 @@
 
 ![](assets/expense-tracker.PNG)
 
-## Stack:
+### Stack:
 
 > React: creat-react-app
 >
@@ -24,10 +24,54 @@
 
 Link: https://barrys-expense-tracker.netlify.app
 
+# Usage
+
+You can use it direct in the Browser or as PWA!
+
+Click in Browser on:
+
+![](assets/pwa.png)
+
+it will install on your divice and works offline to...
+
+## How to use:
+
+1. Fill the form and submit:
+
+![](assets/form.PNG)
+
+2. Track your transaction history or delete it...
+
+![](assets/history.PNG)
+
+3. Get your Balance base on your history
+
+![](assets/balance.PNG)
+
+4. Print it...
+
+Hit the Print button on top the Balance and get a preview site with your history in Table format!
+
+Hit Print again and you system print window will start! Have fun !
+
+![](assets/print.PNG)
+
 # Installation
 
 Use yarn package manager [yarn](https://yarnpkg.com/) to install
 
+first go to the folder:
+
+```bash
+cd expense-tracker
+```
+
 ```bash
 yarn install
+```
+
+To start:
+
+```bash
+yarn start
 ```
