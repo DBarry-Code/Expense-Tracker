@@ -36,23 +36,23 @@ it will install on your divice and works offline to...
 
 ## How to use:
 
-1. Fill the form and submit:
+1.  Fill the form and submit:
 
 ![](assets/form.PNG)
 
-2. Track your transaction history or delete it...
+2.  Track your transaction history or delete it...
 
 ![](assets/history.PNG)
 
-3. Get your Balance base on your history
+3.  Get your Balance base on your history
 
 ![](assets/balance.PNG)
 
-4. Print it...
+4.  Print it...
 
 Hit the Print button on top the Balance and get a preview site with your history in Table format!
 
-Hit Print again and you system print window will start! Have fun !
+Hit Print again and your system print window will start! Have fun !
 
 ![](assets/print.PNG)
 
@@ -75,3 +75,9 @@ To start:
 ```bash
 yarn start
 ```
+
+# Project status
+
+This is my final project for the Spiced Academy i hope you like it...
+
+As an extension, I would add a log-in and date function. And Store the data in a database.
