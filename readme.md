@@ -1,16 +1,22 @@
-![](assets/Expense_-_Tracker.png)
-
 # Expense-Tracker
+
+![](assets/expense-tracker.PNG)
 
 ## Stack:
 
--   React: creat-react-app
--   Context-API - Hooks: useReducer, useContext
--   CSS 3
--   Bootstrap CDN v5.1.3
--   Font-Awesome CDN v5.15.4
--   Browser Local Storage
--   PWA
+> React: creat-react-app
+>
+> Context-API - Hooks: useReducer, useContext
+>
+> CSS 3
+>
+> Bootstrap CDN v5.1.3
+>
+> Font-Awesome CDN v5.15.4
+>
+> Browser Local Storage
+>
+> PWA
 
 # Webhosting and Status
 
@@ -18,4 +24,10 @@
 
 Link: https://barrys-expense-tracker.netlify.app
 
-# Install
+# Installation
+
+Use yarn package manager [yarn](https://yarnpkg.com/) to install
+
+```bash
+yarn install
+```
