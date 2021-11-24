@@ -9,6 +9,7 @@ const initialState = {
         JSON.parse(localStorage.getItem("expenseTransactions")) || [],
 };
 
+// export Global state
 export const GlobalContext = createContext(initialState);
 
 //Global Context Provider
