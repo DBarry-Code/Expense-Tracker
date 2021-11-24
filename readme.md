@@ -1,3 +1,5 @@
+![](assets/Expense_-_Tracker.png)
+
 # Expense-Tracker
 
 ## Stack:
@@ -15,3 +17,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/87d9a805-2a2c-4747-9adb-afa14cf12eea/deploy-status)](https://app.netlify.com/sites/barrys-expense-tracker/deploys)
 
 Link: https://barrys-expense-tracker.netlify.app
+
+# Install
