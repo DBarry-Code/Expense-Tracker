@@ -20,9 +20,21 @@
 
 # Webhosting and Status
 
+One of the goals was to get a high rank in the Chrome Lighthouse test:
+
+This is the Result:
+
+![](assets/check.PNG)
+
+## Deploy on Netlify
+
+Status :
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/87d9a805-2a2c-4747-9adb-afa14cf12eea/deploy-status)](https://app.netlify.com/sites/barrys-expense-tracker/deploys)
 
-Link: https://barrys-expense-tracker.netlify.app
+Link to App:
+
+https://barrys-expense-tracker.netlify.app
 
 # Usage
 
